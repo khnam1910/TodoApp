@@ -1,4 +1,4 @@
-export const fontFamly = {
+export const fontFamily = {
     regular: 'Segoe UI',
     light: 'SegoeUI-Light',
     semiBold: 'SegoeUI-SemiBold',

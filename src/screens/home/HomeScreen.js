@@ -1,17 +1,17 @@
 import React from 'react';
 import { View } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import RowComponent from '../components/RowComponent';
-import SpaceComponent from '../components/SpaceComponent';
-import TabViewExample from '../components/TabViewComponent';
-import Container from '../components/Container';
-import SectionComponent from '../components/SectionComponent';
-import TitleComponent from '../components/TitleComponent';
-import TextComponent from '../components/TextComponent';
-import colors from '../utils/constants/colors';
-import globalStyles from '../utils/styles/globalStyle';
+import RowComponent from '../../components/RowComponent';
+import SpaceComponent from '../../components/SpaceComponent';
+import TabViewExample from '../../components/TabViewComponent';
+import Container from '../../components/Container';
+import SectionComponent from '../../components/SectionComponent';
+import TitleComponent from '../../components/TitleComponent';
+import TextComponent from '../../components/TextComponent';
+import colors from '../../utils/constants/colors';
+import globalStyles from '../../utils/styles/globalStyle';
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
     return (
         <View style={globalStyles.container}>
             <SectionComponent>

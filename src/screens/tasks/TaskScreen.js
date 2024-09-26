@@ -1,17 +1,16 @@
+import { CloseCircle } from 'iconsax-react-native'
 import React from 'react'
-import { TouchableOpacity, View } from 'react-native'
+import { View } from 'react-native'
+import ButtonComponent from '../../components/ButtonComponent'
 import Container from '../../components/Container'
+import FileUploadComponent from '../../components/FileUpLoadComponent'
+import InputComponent from '../../components/InputComponent'
+import RowComponent from '../../components/RowComponent'
 import SectionComponent from '../../components/SectionComponent'
 import TextComponent from '../../components/TextComponent'
 import colors from '../../utils/constants/colors'
 import { fontFamily } from '../../utils/constants/fontFamily'
 import globalStyles from '../../utils/styles/globalStyle'
-import { CloseCircle } from 'iconsax-react-native'
-import RowComponent from '../../components/RowComponent'
-import InputComponent from '../../components/InputComponent'
-import SpaceComponent from '../../components/SpaceComponent'
-import FileUploadComponent from '../../components/FileUpLoadComponent'
-import ButtonComponent from '../../components/ButtonComponent'
 
 const TaskScreen = ({ onClose, visible }) => {
     return (

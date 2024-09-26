@@ -5,7 +5,7 @@ import { useWindowDimensions, Text, View } from 'react-native';
 import { TabBar, TabView } from 'react-native-tab-view';
 import InProgressScreen from '../screens/InProgressScreen';
 import InReviewScreen from '../screens/InReviewScreen';
-import TodoScreen from '../screens/TodoScreen';
+import TodoScreen from '../screens/todo/TodoScreen';
 import colors from '../utils/constants/colors';
 import TextComponent from './TextComponent';
 import { fontFamily } from '../utils/constants/fontFamily';

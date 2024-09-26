@@ -16,7 +16,7 @@ interface Props {
 
 const TextComponent = (props: Props) => {
 
-    const { text, size, color, font, flex, marginBottom } = props;
+    const { text, size, color, font, flex, marginBottom, styles } = props;
 
     return (
         <Text style={[
@@ -27,7 +27,8 @@ const TextComponent = (props: Props) => {
                 fontSize: size ?? 14,
                 color: color ?? colors.text,
                 fontFamily: font ?? fontFamily.regular,
-            }
+            },
+            styles
         ]}>
             {text}
         </Text>

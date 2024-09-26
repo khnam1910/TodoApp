@@ -33,6 +33,23 @@ const globalStyles = StyleSheet.create({
         paddingVertical: 10,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    modalOverlay: {
+        height: '80%',
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'rgba(0,0,0,0.5)',
+    },
+    modalContent: {
+        height: '70%',
+        width: '90%',
+        backgroundColor: 'white',
+    },
+    buttonComponent: {
+        padding: 15,
+        borderRadius: 5,
+        marginHorizontal: 5,
     }
 })
 

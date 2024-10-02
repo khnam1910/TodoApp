@@ -30,6 +30,7 @@ const Router = () => (
             tabBarIcon: ({ focused, color }) => (
                 <TabBarIcon route={route} focused={focused} color={color} />
             ),
+            headerShown: false,
         })}
     >
         <Tab.Screen name="Home" component={HomeScreen} />

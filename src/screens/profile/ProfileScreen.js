@@ -1,11 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import Container from '../../components/Container'
 
 const ProfileScreen = () => {
     return (
-        <View>
+        <Container title='Profile'>
             <Text>ProfileScreen</Text>
-        </View>
+        </Container>
     )
 }
 

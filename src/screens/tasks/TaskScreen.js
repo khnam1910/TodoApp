@@ -1,20 +1,21 @@
-import { CloseCircle } from 'iconsax-react-native'
-import React from 'react'
-import { View } from 'react-native'
-import ButtonComponent from '../../components/ButtonComponent'
-import Container from '../../components/Container'
-import FileUploadComponent from '../../components/FileUpLoadComponent'
-import InputComponent from '../../components/InputComponent'
-import RowComponent from '../../components/RowComponent'
-import SectionComponent from '../../components/SectionComponent'
-import TextComponent from '../../components/TextComponent'
-import colors from '../../utils/constants/colors'
-import { fontFamily } from '../../utils/constants/fontFamily'
-import globalStyles from '../../utils/styles/globalStyle'
+import { CloseCircle } from 'iconsax-react-native';
+import React, { useState } from 'react';
+import { View } from 'react-native';
+import ButtonComponent from '../../components/ButtonComponent';
+import Container from '../../components/Container';
+import FileUploadComponent from '../../components/FileUpLoadComponent';
+import InputComponent from '../../components/InputComponent';
+import RowComponent from '../../components/RowComponent';
+import SectionComponent from '../../components/SectionComponent';
+import TextComponent from '../../components/TextComponent';
+import colors from '../../utils/constants/colors';
+import { fontFamily } from '../../utils/constants/fontFamily';
+import globalStyles from '../../utils/styles/globalStyle';
 
 const TaskScreen = ({ onClose, visible }) => {
+
     return (
-        <Container>
+        <Container Container >
             <View style={[globalStyles.container, { padding: 16 }]}>
                 <RowComponent>
                     <TextComponent
@@ -28,39 +29,53 @@ const TaskScreen = ({ onClose, visible }) => {
                 </RowComponent>
                 <SectionComponent styles={{ paddingHorizontal: 0, marginBottom: 10 }}>
                     <TextComponent text='Project' color={colors.title} styles={{ paddingHorizontal: 10 }} />
-                    <InputComponent />
+                    <InputComponent
+                        required
+                    />
                 </SectionComponent>
                 <SectionComponent styles={{ paddingHorizontal: 0, marginBottom: 10 }}>
                     <TextComponent text='Issue Type' color={colors.title} styles={{ paddingHorizontal: 10 }} />
-                    <InputComponent />
+                    <InputComponent
+                        required
+                    />
                 </SectionComponent>
                 <SectionComponent styles={{ paddingHorizontal: 0, marginBottom: 10 }}>
                     <TextComponent text='Summary' color={colors.title} styles={{ paddingHorizontal: 10 }} />
-                    <InputComponent iconVisible={false} />
+                    <InputComponent
+                        iconVisible={false}
+                    />
                 </SectionComponent>
                 <SectionComponent styles={{ paddingHorizontal: 0, marginBottom: 10 }}>
-                    <TextComponent text='Description' color={colors.title} styles={{ paddingHorizontal: 10 }} marginBottom={10} />
+                    <TextComponent text='Description' color={colors.title} styles={{ paddingHorizontal: 10 }} />
                     <FileUploadComponent />
                 </SectionComponent>
                 <SectionComponent styles={{ paddingHorizontal: 0, marginBottom: 10 }}>
                     <TextComponent text='Reporter' color={colors.title} styles={{ paddingHorizontal: 10 }} />
-                    <InputComponent iconVisible={false} />
+                    <InputComponent
+                    />
                 </SectionComponent>
                 <SectionComponent styles={{ paddingHorizontal: 0, marginBottom: 10 }}>
                     <TextComponent text='Priority' color={colors.title} styles={{ paddingHorizontal: 10 }} />
-                    <InputComponent />
+                    <InputComponent
+                    />
                 </SectionComponent>
                 <SectionComponent styles={{ paddingHorizontal: 0, marginBottom: 10 }}>
                     <TextComponent text='Labels' color={colors.title} styles={{ paddingHorizontal: 10 }} />
-                    <InputComponent />
+                    <InputComponent
+
+                    />
                 </SectionComponent>
                 <SectionComponent styles={{ paddingHorizontal: 0, marginBottom: 10 }}>
                     <TextComponent text='Linked issue' color={colors.title} styles={{ paddingHorizontal: 10 }} />
-                    <InputComponent />
+                    <InputComponent
+
+                    />
                 </SectionComponent>
                 <SectionComponent styles={{ paddingHorizontal: 0, marginBottom: 10 }}>
                     <TextComponent text='Assignee' color={colors.title} styles={{ paddingHorizontal: 10 }} />
-                    <InputComponent />
+                    <InputComponent
+
+                    />
                 </SectionComponent>
                 <SectionComponent styles={{ paddingHorizontal: 0, marginBottom: 10 }}>
                     <TextComponent text='Sprint' color={colors.title} styles={{ paddingHorizontal: 10 }} />
@@ -71,17 +86,14 @@ const TaskScreen = ({ onClose, visible }) => {
                         <ButtonComponent bgColor={colors.title} >
                             <TextComponent text='Create' color={colors.bgColor} />
                         </ButtonComponent>
-                        <ButtonComponent >
+                        <ButtonComponent onPress={onClose}>
                             <TextComponent text='Cancel' color={colors.title} />
                         </ButtonComponent>
                     </RowComponent>
                 </SectionComponent>
-            </View >
-        </Container>
+            </View>
+        </Container >
     );
 }
 
-
-
-
-export default TaskScreen
+export default TaskScreen;

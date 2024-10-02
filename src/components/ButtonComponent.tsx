@@ -5,9 +5,9 @@ import globalStyles from '../utils/styles/globalStyle';
 
 interface Props {
     children: ReactNode,
-    bgColor: string,
+    bgColor?: string,
     onPress?: () => void
-    styles: StyleProp<ViewStyle>
+    styles?: StyleProp<ViewStyle>
 }
 
 const ButtonComponent = (props: Props) => {

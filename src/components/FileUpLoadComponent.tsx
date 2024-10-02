@@ -8,7 +8,7 @@ import TextComponent from './TextComponent';
 
 const FileUploadComponent = () => {
     return (
-        <View>
+        <View style={{ marginTop: 10 }}>
             <View style={localStyles.uploadBox}>
                 <Feather name='upload-cloud' size={50} color={colors.text} />
                 <RowComponent styles={localStyles.browseButton} onPress={() => console.log('a')}>

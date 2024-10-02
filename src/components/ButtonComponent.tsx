@@ -21,6 +21,7 @@ const ButtonComponent = (props: Props) => {
                 }
                 , styles
             ]}
+            onPress={onPress}
         >
             {children}
         </TouchableOpacity>

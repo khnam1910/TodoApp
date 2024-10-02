@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import { ArrowDown2 } from 'iconsax-react-native';
 import colors from '../utils/constants/colors';
@@ -9,36 +9,30 @@ interface Props {
     placeholder?: string,
     onPress?: () => void,
     iconVisible?: boolean,
-    required?: boolean,
+    value?: string,
+    onChange?: (name: string, value: string) => void,
+    error?: string,
+    name: string,
 }
 
-
 const InputComponent = (props: Props) => {
+    const { placeholder, onPress, iconVisible = true, value, onChange, error, name } = props;
 
-    const { placeholder, onPress, iconVisible = true, required } = props;
-    const [inputValue, setInputValue] = useState('');
-    const [error, setError] = useState('');
-
-    const validateInput = (text: string) => {
-        setInputValue(text);
-
-        if (required && text.trim() === '') {
-            setError("This field isn't empty");
+    const handleChange = (text: string) => {
+        if (onChange) {
+            onChange(name, text);
         }
-        else {
-            setError('');
-        }
-    }
+    };
 
     return (
         <View>
-            <RowComponent >
+            <RowComponent>
                 <TextInput
                     style={localStyles.input}
                     placeholder={placeholder}
                     placeholderTextColor={colors.description}
-                    onChangeText={validateInput}
-                    value={inputValue}
+                    value={value}
+                    onChangeText={handleChange}
                 />
                 {iconVisible && (
                     <TouchableOpacity onPress={onPress} style={{ padding: 10 }}>
@@ -51,16 +45,13 @@ const InputComponent = (props: Props) => {
                 <TextComponent
                     text={error}
                     color='rgba(255,0,0,0.8)'
-                    marginBottom={5}
                     size={12}
+                    styles={{ marginTop: 5 }}
                 />
             ) : null}
         </View>
-
     );
 };
-
-
 
 const localStyles = StyleSheet.create({
     input: {
@@ -73,8 +64,7 @@ const localStyles = StyleSheet.create({
         height: 1,
         backgroundColor: colors.title,
         width: '100%',
-        position: 'absolute',
-        bottom: 0,
+        marginTop: 5, // Thêm marginTop để tạo khoảng cách với TextInput
     },
 });
 

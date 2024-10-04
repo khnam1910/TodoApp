@@ -74,7 +74,7 @@ const TaskScreen = ({ onClose, visible }) => {
     );
 
     return (
-        <Container>
+        <Container isScroll>
             <View style={[globalStyles.container, { padding: 16 }]}>
                 <RowComponent>
                     <TextComponent
@@ -98,12 +98,8 @@ const TaskScreen = ({ onClose, visible }) => {
                 {renderComponent('sprint', 'Sprint', InputComponent)}
                 <SectionComponent styles={{ paddingHorizontal: 0 }}>
                     <RowComponent justify='flex-end'>
-                        <ButtonComponent bgColor={colors.title} onPress={handleCreate}>
-                            <TextComponent text='Create' color={colors.bgColor} />
-                        </ButtonComponent>
-                        <ButtonComponent onPress={onClose}>
-                            <TextComponent text='Cancel' color={colors.title} />
-                        </ButtonComponent>
+                        <ButtonComponent text='Create' color={colors.bgColor} onPress={handleCreate} />
+                        <ButtonComponent text='Cancel' color={colors.title} bgColor={colors.bgColor} onPress={onClose} />
                     </RowComponent>
                 </SectionComponent>
             </View>

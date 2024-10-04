@@ -1,29 +1,39 @@
 import React, { ReactNode } from 'react';
-import { StyleProp, TouchableOpacity, ViewStyle } from 'react-native';
+import { ActivityIndicator, StyleProp, TouchableOpacity, ViewStyle } from 'react-native';
 import colors from '../utils/constants/colors';
 import globalStyles from '../utils/styles/globalStyle';
+import TextComponent from './TextComponent';
+import { fontFamily } from '../utils/constants/fontFamily';
 
 interface Props {
-    children: ReactNode,
     bgColor?: string,
     onPress?: () => void
     styles?: StyleProp<ViewStyle>
+    isLoading?: boolean,
+    text: string,
+    color?: string,
 }
 
 const ButtonComponent = (props: Props) => {
-    const { children, styles, bgColor, onPress } = props;
+    const { styles, bgColor, onPress, isLoading, text, color } = props;
     return (
         <TouchableOpacity
+            disabled={isLoading}
             style={[
                 globalStyles.buttonComponent,
                 {
-                    backgroundColor: bgColor ? bgColor : colors.bgColor
+                    backgroundColor: bgColor ? bgColor : isLoading ? colors.description : colors.title,
                 }
                 , styles
             ]}
             onPress={onPress}
         >
-            {children}
+            {isLoading ?
+                (
+                    <ActivityIndicator />
+                ) : (
+                    <TextComponent text={text} color={color ? color : colors.text} flex={0} font={fontFamily.semiBold} />
+                )}
         </TouchableOpacity>
     )
 }
